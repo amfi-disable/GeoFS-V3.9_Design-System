@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GeoFS Design System
+// @name         GeoFS-V3.9_Design-System
 // @namespace    http://tampermonkey.net/
 // @version      1.0.0
 // @description  The core glassmorphic design system and UI tokens for GeoFS addons.
@@ -11,7 +11,7 @@
 
 (function() {
     'use strict';
-    const cssUrl = 'https://raw.githack.com/AwesomeOddEven-NightKeys-LunarBlink/GeoFS-Design-System/main/src/design.css';
+    const cssUrl = 'https://raw.githack.com/AwesomeOddEven-NightKeys-LunarBlink/GeoFS-V3.9_Design-System/main/design.css';
 
     function injectCSS() {
         if (document.getElementById('geofs-addon-design-system')) return;

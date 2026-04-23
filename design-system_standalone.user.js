@@ -11,7 +11,7 @@
 
 (function() {
     'use strict';
-    const cssUrl = 'https://raw.githack.com/AwesomeOddEven-NightKeys-LunarBlink/GeoFS-V3.9_Design-System/main/design.css';
+    const cssUrl = 'https://raw.githack.com/AwesomeOddEven-NightKeys-LunarBlink/GeoFS-V3.9_Design-System/main/design-system.css';
 
     function injectCSS() {
         if (document.getElementById('geofs-addon-design-system')) return;

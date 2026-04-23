@@ -1,4 +1,4 @@
-# 🎨 GeoFS Design System (v3.9)
+# 🎨 GeoFS-V3.9_Design-System
 
 **GeoFS-V3.9_Design-System** is the architectural backbone for all UI components within the AwesomeOddEven ecosystem. It provides the standardized buttons, menus, and notification systems used to ensure all extensions feel like native features of the GeoFS flight simulator.
 

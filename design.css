@@ -1,0 +1,375 @@
+/* ── Addon-Pack Design System ── */
+/* Features: Glassmorphism, smooth transitions, high-contrast readable fonts, and a consistent navy/cyan palette. */
+
+/* ── Addon-Pack dropdown items ── */
+.addonpack-dropdown {
+    cursor: pointer;
+    padding: 10px 14px;
+    margin: 3px 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(10,15,30,0.9), rgba(20,30,45,0.85));
+    color: #ffffff;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+.addonpack-dropdown:hover {
+    background: linear-gradient(135deg, rgba(20,30,60,0.95), rgba(40,60,90,0.9));
+    border-color: rgba(80,120,200,0.3);
+    transform: translateX(2px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+/* ── Chevron icon ── */
+.addonpack-chevron {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 10px;
+    transition: transform 0.3s ease;
+    color: rgba(100,200,255,0.95);
+}
+.addonpack-chevron.open {
+    transform: rotate(90deg);
+}
+
+/* ── Sub-content containers ── */
+.addonpack-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+    padding: 0 8px;
+    background: rgba(15, 25, 45, 0.98);
+    border-radius: 8px;
+    border: 1px solid rgba(100,200,255,0.25);
+    margin: 2px 4px 8px 4px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.addonpack-content.open {
+    max-height: 5000px;
+    opacity: 1;
+    padding: 10px;
+}
+
+/* ── Sub-items (addon entries, aircraft entries) ── */
+.addonpack-sub-item {
+    cursor: pointer;
+    padding: 8px 12px;
+    margin: 2px 0;
+    border-radius: 6px;
+    background: rgba(100,200,255,0.05);
+    color: #eef2f7;
+    font-size: 12.5px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+.addonpack-sub-item:hover {
+    background: rgba(100,200,255,0.1);
+    border-left-color: rgba(100,200,255,0.8);
+    color: #ffffff;
+}
+
+/* ── Description text ── */
+.addonpack-description {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 11.5px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    border-left: 2px solid rgba(100,200,255,0.5);
+    margin-left: 12px;
+}
+.addonpack-description.open {
+    max-height: 8000px;
+    opacity: 1;
+    padding: 8px 10px;
+}
+
+/* ── Flight data display (HUD) ── */
+#flightDataDisplay {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 230px;
+    background: linear-gradient(145deg, rgba(10,18,30,0.75), rgba(20,35,55,0.70));
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-family: 'Roboto Mono', 'Consolas', monospace;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #e0e8f0;
+    pointer-events: auto;
+    z-index: 100000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(100,200,255,0.12);
+    cursor: move;
+    user-select: none;
+}
+#flightDataDisplay .hud-label {
+    color: #64c8ff;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+#flightDataDisplay .hud-value {
+    color: #fff;
+    font-size: 13px;
+}
+#flightDataDisplay .hud-value.warn {
+    color: #ffb347;
+}
+#flightDataDisplay .hud-value.danger {
+    color: #ff6b6b;
+}
+#flightDataDisplay .hud-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+#flightDataDisplay .hud-drag-handle {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: rgba(100,200,255,0.2);
+    font-size: 14px;
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-bottom: 2px;
+    cursor: move;
+}
+#flightDataDisplay .hud-section-header {
+    grid-column: 1 / -1;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: rgba(100,200,255,0.7);
+    margin-top: 10px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(100,200,255,0.05);
+    padding-bottom: 2px;
+}
+#flightDataDisplay .hud-section-header:first-of-type {
+    margin-top: 2px;
+}
+#flightDataDisplay .unified-tabs {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    margin: 2px 0 4px;
+}
+#flightDataDisplay .unified-tab {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    border-radius: 4px;
+    font-size: 8px;
+    cursor: pointer;
+    padding: 3px 2px;
+    font-family: Outfit, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+#flightDataDisplay .unified-tab.active {
+    background: rgba(100,200,255,0.2);
+    border-color: rgba(100,200,255,0.45);
+    color: #64c8ff;
+}
+#flightDataDisplay .unified-content {
+    display: none;
+    grid-column: 1 / -1;
+}
+#flightDataDisplay .unified-content.active {
+    display: block;
+}
+#flightDataDisplay .unified-content.unified-grid.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+}
+#flightDataDisplay .full-width {
+    grid-column: 1 / -1;
+}
+
+/* ── Category headers inside Aircraft menu ── */
+.addonpack-category {
+    padding: 8px 14px;
+    margin: 4px 0;
+    border-radius: 6px;
+    background: rgba(100,200,255,0.12);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.addonpack-category:hover {
+    background: rgba(100,200,255,0.15);
+}
+
+/* ── HUD minimize button ── */
+#hudMinimizeBtn {
+    position: fixed;
+    top: 50% !important;
+    margin-top: -15px !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 24px;
+    height: 40px;
+    background: linear-gradient(145deg, rgba(20,35,55,0.9), rgba(10,18,30,0.8));
+    border: 1px solid rgba(100,200,255,0.25);
+    border-left: none;
+    border-radius: 0 7px 7px 0;
+    color: rgba(100,200,255,0.8);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: move;
+    z-index: 100002;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    user-select: none;
+}
+#hudMinimizeBtn:hover {
+    background: linear-gradient(145deg, rgba(20,35,60,0.95), rgba(35,60,95,0.90));
+    border-color: rgba(100,200,255,0.5);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+#flightDataDisplay.hud-minimized {
+    display: none !important;
+}
+
+.addonpack-block-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+    justify-content: space-between;
+}
+.addonpack-block {
+    flex: 1 0 18%;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(100,200,255,0.08);
+    border: 1px solid rgba(100,200,255,0.15);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+.addonpack-block:hover {
+    background: rgba(100,200,255,0.2);
+    border-color: rgba(100,200,255,0.4);
+    color: #fff;
+}
+.addonpack-block.active {
+    background: rgba(100,200,255,0.25);
+    border-color: #64c8ff;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(100,200,255,0.3);
+}
+
+/* ── Addon-Pack Card System ── */
+.addonpack-card {
+    position: fixed;
+    left: 20px;
+    bottom: 60px;
+    width: 330px;
+    background: linear-gradient(135deg, rgba(15, 25, 45, 0.96), rgba(25, 45, 75, 0.92));
+    color: #fff;
+    border-radius: 18px;
+    border: 1px solid rgba(100, 200, 255, 0.2);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 12px 50px rgba(0,0,0,0.6), inset 0 0 15px rgba(100,200,255,0.05);
+    font-family: 'Inter', system-ui, sans-serif;
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15), opacity 0.3s ease;
+    transform: translateX(-120%);
+    opacity: 0;
+    pointer-events: auto;
+}
+.addonpack-card.active {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+}
+.addonpack-card-header {
+    padding: 14px 18px;
+    background: rgba(100, 200, 255, 0.1);
+    border-radius: 18px 18px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+}
+.addonpack-card-header span {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: rgba(100, 200, 255, 0.9);
+    text-transform: uppercase;
+}
+.addonpack-card-content {
+    padding: 20px;
+}
+.addonpack-score-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 3px solid #64c8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
+    background: rgba(100, 200, 255, 0.05);
+}
+.addonpack-badge {
+    flex: 1;
+    margin-left: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.badge-butter { background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff; box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); }
+.badge-acceptable { background: linear-gradient(135deg, #eab308, #ca8a04); color: #000; box-shadow: 0 0 20px rgba(234, 179, 8, 0.4); }
+.badge-hard { background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+.badge-crash { background: linear-gradient(135deg, #7f1d1d, #450a0a); color: #fff; box-shadow: 0 0 20px rgba(127, 29, 29, 0.6); }
+.badge-takeoff { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }

@@ -20,7 +20,7 @@
         link.rel = 'stylesheet';
         link.href = cssUrl;
         document.head.appendChild(link);
-        console.log('GeoFS [Addon-Pack]: [Design System] Styled by AwesomeOddEven.');
+        console.log('[GeoFS-V3.9_Design-System] Core UI tokens and glassmorphic styles injected.');
     }
 
     injectCSS();

@@ -617,5 +617,5 @@
     document.head.appendChild(style);
     
     console.log("[GeoFS-V3.9_Design-System] >> Styles injected via library wrapper.");
-    if (window.V39_NOTIF) window.V39_NOTIF.success("GeoFS-V3.9_Design-System v2.0.0 Loaded.");
+    if (window.V39_NOTIF) window.V39_NOTIF.success("GeoFS-V3.9_Design-System V2.0.0 Loaded.");
 })();

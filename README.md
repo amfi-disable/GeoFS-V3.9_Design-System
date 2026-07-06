@@ -9,10 +9,10 @@ The official visual language and UI token library for **GeoFS-V3.9**. This syste
 ## ✨ Features
 
 - **💎 Glassmorphic UI**: High-fidelity translucent panels with background-blur effects and professional drop shadows.
-- **🎨 Unified CSS Tokens**: A centralized library of colors, spacing, and transition variables that ensure 100% visual consistency.
+- **🎨 Centralized Styles**: central styling stylesheet that ensures 100% visual consistency across modules.
 - **🧩 Component Library**: Pre-styled buttons, sliders, cards, and input fields optimized for the GeoFS environment.
 - **📱 Responsive Layouts**: Adaptive design tokens that ensure UI components look premium on all screen sizes and resolutions.
-- **🚀 Lightweight Integration**: Injected via a single CSS link to minimize performance overhead while maximizing visual impact.
+- **🚀 CDN Loader Architecture**: Automatically injects unified CSS layout rules to maximize visual impact.
 
 ## 🛠️ Installation
 
@@ -20,16 +20,6 @@ The official visual language and UI token library for **GeoFS-V3.9**. This syste
 
 1. Install the [Tampermonkey](https://www.tampermonkey.net/) extension.
 2. Install the script via [**Greasy Fork**](https://greasyfork.org/en/scripts/581511-geofs-v3-9-design-system).
-3. Refresh GeoFS and launch.
-
-## 🔗 Ecosystem Role
-
-This is a **required dependency** for:
-
-- GeoFS-V3.9_Information-Display
-- GeoFS-V3.9_Realism-Pack
-- GeoFS-V3.9_Failure-Simulator
-- GeoFS-V3.9_Fuel-Simulator
-- GeoFS-V3.9_Checklist-System
+3. This module acts as a dependency/visual base and runs automatically in the background to assist other modules.
 
 *© 2026 _init. Part of the [GeoFS-V3.9_Ecosystem](https://sites.google.com/view/geofs-v39-ecosystem/home).*

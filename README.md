@@ -1,10 +1,10 @@
 # GeoFS-V3.9_Design-System
 
-![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)
-![Ecosystem](https://img.shields.io/badge/GeoFS-V3.9_Addon--Pack-64c8ff?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Stable-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-v2.0.0-3b82f6?style=flat-square&logo=git&logoColor=white)
+![Ecosystem](https://img.shields.io/badge/GeoFS--V3.9-Design_System-6366f1?style=flat-square&logo=blueprint&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Stable-10b981?style=flat-square&logo=lighthouse&logoColor=white)
 
-The official visual language and UI token library for **GeoFS v3.9**. This system defines the glassmorphic aesthetic, modern typography, and responsive component library used by every "Pro" module in the ecosystem. It provides a unified, premium look and feel across all addons.
+The official visual language and UI token library for **GeoFS-V3.9**. This system defines the glassmorphic aesthetic, modern typography, and responsive component library used by every "Pro" module in the ecosystem. It provides a unified, premium look and feel across all addons.
 
 ## ✨ Features
 
@@ -17,21 +17,19 @@ The official visual language and UI token library for **GeoFS v3.9**. This syste
 ## 🛠️ Installation
 
 ### Standalone (Tampermonkey)
+
 1. Install the [Tampermonkey](https://www.tampermonkey.net/) extension.
-2. Click **Create a new script**.
-3. Paste the contents of `design-system_standalone.user.js` from this repository.
-4. Save and launch GeoFS.
+2. Install the script via [**Greasy Fork**](https://greasyfork.org/en/scripts/581511-geofs-v3-9-design-system).
+3. Refresh GeoFS and launch.
 
 ## 🔗 Ecosystem Role
+
 This is a **required dependency** for:
-- [GeoFS-V3.9_HUD-Information-Display-Pro](https://github.com/AwesomeOddEven-NightKeys-LunarBlink/GeoFS-V3.9_HUD-Information-Display-Pro)
-- [GeoFS-V3.9_Realism-Pack](https://github.com/AwesomeOddEven-NightKeys-LunarBlink/GeoFS-V3.9_Realism-Pack)
-- [GeoFS-V3.9_Failure-Simulator](https://github.com/AwesomeOddEven-NightKeys-LunarBlink/GeoFS-V3.9_Failure-Simulator)
 
-## 🤝 Credits
-- **AwesomeOddEven** (Lead Designer & UI Logic)
-- **NightKeys** (Visual Polish & Component Testing)
-- **LunarBlink** (Typography & Documentation)
+- GeoFS-V3.9_Information-Display
+- GeoFS-V3.9_Realism-Pack
+- GeoFS-V3.9_Failure-Simulator
+- GeoFS-V3.9_Fuel-Simulator
+- GeoFS-V3.9_Checklist-System
 
----
-*© 2026 AwesomeOddEven-NightKeys-LunarBlink. Part of the GeoFS-V3.9 Pro Suite.*
+*© 2026 _init. Part of the [GeoFS-V3.9_Ecosystem](https://sites.google.com/view/geofs-v39-ecosystem/home).*
